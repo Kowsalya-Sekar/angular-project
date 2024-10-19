@@ -1,0 +1,44 @@
+<div class="login-container">
+    <div class="login-form-wrapper">
+        <!-- Left side with image -->
+        <div class="login-image">
+            <img src="../../../../assets/images/loginform-image.jpg" alt="Login Image" />
+        </div>
+
+        <!-- Right side with form -->
+        <div class="login-form">
+            <div class="toggle-button">
+                <button mat-raised-button class="nav-button" (click)="isLoginActive = true"
+                    [ngClass]="{'active-button': isLoginActive}">Login</button>
+                <button mat-raised-button class="nav-button" (click)="isLoginActive = false"
+                    [ngClass]="{'active-button': !isLoginActive}">Register</button>
+            </div>
+            <h2>Welcome</h2>
+            <p *ngIf="isLoginActive">Please login to your account</p>
+            <p *ngIf="!isLoginActive">Please create a new account</p>
+            <form *ngIf="isLoginActive" [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                <div class="form-group">
+                    <label for="email">Username or Email</label>
+                    <input id="email" formControlName="email" type="email" placeholder="Enter your email" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" formControlName="password" type="password" placeholder="Enter your password" />
+                </div>
+                <!-- <button type="submit" [disabled]="!loginForm.valid">Login</button> -->
+                <div class="action-buttons">
+                    <a>Forgot password</a>
+                    <button mat-raised-button type="submit">OK</button>
+                </div>
+            </form>
+            <div *ngIf="isLoginActive">
+            </div>
+            <button mat-raised-button disabled style="margin-top: 10px;
+                        border-radius: 20px;
+                        margin-right: 30px;">Register your School in Our Apps</button>
+            <div class="cond-buttons">
+                <p>Term and Conditions & Privacy Policy</p>
+            </div>
+        </div>
+    </div>
+</div>

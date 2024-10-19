@@ -1,0 +1,128 @@
+.login-container {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Position relative for layering */
+    overflow: hidden;
+
+    /* semi-transparent background */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../../../assets/images/backround-image.jpg');
+        /* Background image */
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+        /* opacity for the background image */
+        z-index: 1;
+        /* it's behind the form */
+    }
+
+    .login-form-wrapper {
+        position: relative;
+        z-index: 2;
+        /* form is above the background */
+        display: flex;
+        width: 80%;
+        background-color: #fff;
+        /* Slight transparency for the form */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .login-image {
+        flex: 2;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .login-form {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .toggle-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 25px;
+
+            button.nav-button {
+                margin-right: 20px;
+                border-radius: 20px;
+
+                &.active-button {
+                    background-color: #f6d100;
+                    /* Active button color for Login */
+                }
+            }
+        }
+
+
+        h2 {
+            margin-bottom: 0px;
+        }
+
+        p {
+            font-size: 10px !important;
+            color: grey;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: grey;
+            }
+
+            input {
+                width: 85%;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                border-radius: 5px;
+            }
+        }
+
+        .action-buttons {
+            display: flex;
+
+            a {
+                text-decoration: underline;
+                color: grey;
+                margin-right: 40%;
+            }
+
+            button {
+                background-color: #f6d100;
+                border-radius: 20px;
+            }
+        }
+
+        .cond-buttons {
+            margin: 10px 0 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
